@@ -1,3 +1,4 @@
+from user_data import User
 import random
 import string
 import pyperclip
