@@ -64,7 +64,18 @@ def test_display_credentials(self):
 		twitter.save_credentials()
 		gmail = Credential('paul','Gmail','okoye','nairobi123')
 		gmail.save_credentials()
-		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)                          
+		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)
+
+def test_find_by_site_name(self):
+		'''
+		Test to check if the find_by_site_name method returns the correct credential
+		'''
+		self.new_credential.save_credentials()
+		twitter = Credential('Jane','Twitter','maryjoe','nairobi123')
+		twitter.save_credentials()
+		credential_exists = Credential.find_by_site_name('Twitter')
+		self.assertEqual(credential_exists,twitter)
+                                  
 
 if __name__ == '__main__':
     unittest.main()        
