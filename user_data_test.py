@@ -49,7 +49,7 @@ class TestUser(unittest.TestCase):
             test_user.save_user()
             self.assertEqual(len(User.users_list),2)        
 
-class TestCredentials(unittest.TestCase):
+# class TestCredentials(unittest.TestCase):
 	'''
 	Test class that defines test cases for the credentials class behaviours.
 	Args:
