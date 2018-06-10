@@ -46,7 +46,14 @@ def test_save_credentials(self):
 		self.new_credential.save_credentials()
 		twitter = Credential('Jane','Twitter','maryjoe','nairobi123')
 		twitter.save_credentials()
-		self.assertEqual(len(Credential.credentials_list),2)            
+		self.assertEqual(len(Credential.credentials_list),2)
+         
+def tearDown(self):
+		'''
+		Function to clear the credentials list after every test
+		'''
+		Credential.credentials_list = []
+		User.users_list = []                   
 
 if __name__ == '__main__':
     unittest.main()        
