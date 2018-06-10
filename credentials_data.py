@@ -34,6 +34,7 @@ class Credential:
 		self.password = password
 
 def save_credentials(self):
+
 		'''
 		Function to save a newly created user instance
 		'''
@@ -49,6 +50,7 @@ def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase
 
 @classmethod
 def display_credentials(cls,user_name):
+    
 		'''
 		Class method to display the list of credentials saved
 		'''
