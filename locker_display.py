@@ -1,5 +1,6 @@
-from credentials_data import Credential # Importing the credential class
-from user_data import User # Importing the user class
+#! /usr/bin/env python3
+from credentials_data import Credential
+from user_data import User
 import pyperclip
 
 def create_user(fname,lname,password):
@@ -13,14 +14,7 @@ def save_user(user):
 	'''
 	Function to save a new user account
 	'''
-	User.save_user(user) 
-
-def save_user(user):
-	'''
-	Function to save a new user account
-	'''
 	User.save_user(user)
-
 
 def verify_user(first_name,password):
 	'''
@@ -76,18 +70,19 @@ def main():
 			print("-"*60)
 			print(' ')
 			print('To create a new account:')
-			first_name = input('Enter your first name - ').strip()
-			last_name = input('Enter your last name - ').strip()
-			password = input('Enter your password - ').strip()
+			first_name = input('Enter your first name - ')
+			last_name = input('Enter your last name - ')
+			password = input('Enter your password - ')
 			save_user(create_user(first_name,last_name,password))
-			print(" ")
-			print(f'New Account Created for: {first_name} {last_name} using password: {password}')
+			print("done")
+			# print(f'New Account Created for: + {first_name} + {last_name} + using password:)
+			# print(f"New Account Created for:  {first_name} {last_name} using password:{password}")
 		elif short_code == 'li':
 			print("-"*60)
 			print(' ')
 			print('To login, enter your account details:')
-			user_name = input('Enter your first name - ').strip()
-			password = str(input('Enter your password - '))
+			user_name = input('Enter your first name - ')
+			password = input('Enter your password - ')
 			user_exists = verify_user(user_name,password)
 			if user_exists == user_name:
 				print(" ")
@@ -100,7 +95,7 @@ def main():
 					print("-"*60)
 					if short_code == 'ex':
 						print(" ")
-						print(f'Goodbye {user_name}')
+						print(f'Goodbye  {user_name}')
 						break
 					elif short_code == 'cc':
 						print(' ')
@@ -126,7 +121,7 @@ def main():
 								print('Oops! Wrong option entered. Try again.')
 						save_credential(create_credential(user_name,site_name,account_name,password))
 						print(' ')
-						print(f'Credential Created: Site Name: {site_name} - Account Name: {account_name} - Password: {password}')
+						print(f'Credential Created: Site Name:  {site_name}  Account Name:  {account_name}  Password: {password}')
 						print(' ')
 					elif short_code == 'dc':
 						print(' ')
@@ -134,7 +129,7 @@ def main():
 							print('Here is a list of all your credentials')
 							print(' ')
 							for credential in display_credentials(user_name):
-								print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')
+								print(f'Site Name: {credential.site_name} Account Name: {credential.account_name} Password: {credential.password}')
 							print(' ')	
 						else:
 							print(' ')
@@ -156,9 +151,15 @@ def main():
 			print("-"*60)
 			print(' ')
 			print('Oops! Wrong option entered. Try again.')
-				
+			if user_exists == user_name:
+				print(" ")
+				print(f'Welcome {user_name} . Please choose an option to continue.')
+				print(' ')
+
+
+
 
 
 
 if __name__ == '__main__':
-	main()       
+	main()

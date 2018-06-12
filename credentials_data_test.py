@@ -1,3 +1,4 @@
+import pyperclip
 import unittest # Importing the unittest module
 from credentials_data import Credential # Importing the credential class
 from user_data import User # Importing the user class
@@ -39,7 +40,7 @@ class TestCredentials(unittest.TestCase):
 		self.assertEqual(self.new_credential.account_name,'maryjoe')
 		self.assertEqual(self.new_credential.password,'nairobi123')
 
-def test_save_credentials(self):
+	def test_save_credentials(self):
 		'''
 		Test to check if the new credential info is saved into the credentials list
 		'''
@@ -48,14 +49,14 @@ def test_save_credentials(self):
 		twitter.save_credentials()
 		self.assertEqual(len(Credential.credentials_list),2)
 
-def tearDown(self):
+	def tearDown(self):
 		'''
 		Function to clear the credentials list after every test
 		'''
 		Credential.credentials_list = []
 		User.users_list = [] 
 
-def test_display_credentials(self):
+	def test_display_credentials(self):
 		'''
 		Test to check if the display_credentials method, displays the correct credentials.
 		'''
@@ -66,7 +67,7 @@ def test_display_credentials(self):
 		gmail.save_credentials()
 		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)
 
-def test_find_by_site_name(self):
+	def test_find_by_site_name(self):
 		'''
 		Test to check if the find_by_site_name method returns the correct credential
 		'''
@@ -76,7 +77,7 @@ def test_find_by_site_name(self):
 		credential_exists = Credential.find_by_site_name('Twitter')
 		self.assertEqual(credential_exists,twitter)
 
-def test_copy_credential(self):
+	def test_copy_credential(self):
 		'''
 		Test to check if the copy a credential method copies the correct credential
 		'''
@@ -86,6 +87,7 @@ def test_copy_credential(self):
 		find_credential = None
 		for credential in Credential.user_credentials_list:
 				find_credential =Credential.find_by_site_name(credential.site_name)
+				print(find_credential.site_name)
 				return pyperclip.copy(find_credential.password)
 		Credential.copy_credential(self.new_credential.site_name)
 		self.assertEqual('nairobi123',pyperclip.paste())

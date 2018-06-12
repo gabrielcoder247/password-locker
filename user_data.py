@@ -1,3 +1,4 @@
+# import pyperclip
 # from user_data import User
 class User:
     """
