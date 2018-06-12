@@ -154,7 +154,7 @@ def main():
 			if user_exists == user_name:
 				print(" ")
 				print(f'Welcome {user_name} . Please choose an option to continue.')
-				# print(' ')
+				print(' ')
 
 
 
