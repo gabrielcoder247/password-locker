@@ -75,7 +75,7 @@ def main():
 			password = input('Enter your password - ')
 			save_user(create_user(first_name,last_name,password))
 			print("done")
-			# print(f'New Account Created for: + {first_name} + {last_name} + using password:)
+			# print(f'New Account Created for: + {first_name} + {last_name} + using password:')
 			# print(f"New Account Created for:  {first_name} {last_name} using password:{password}")
 		elif short_code == 'li':
 			print("-"*60)
@@ -86,7 +86,7 @@ def main():
 			user_exists = verify_user(user_name,password)
 			if user_exists == user_name:
 				print(" ")
-				print(f'Welcome {user_name}. Please choose an option to continue.')
+				# print(f'Welcome {user_name}. Please choose an option to continue.')
 				print(' ')
 				while True:
 					print("-"*60)
@@ -95,7 +95,7 @@ def main():
 					print("-"*60)
 					if short_code == 'ex':
 						print(" ")
-						print(f'Goodbye  {user_name}')
+						# print(f'Goodbye  {user_name}')
 						break
 					elif short_code == 'cc':
 						print(' ')

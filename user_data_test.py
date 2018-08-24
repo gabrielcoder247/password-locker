@@ -1,6 +1,7 @@
 # import pyperclip
 import unittest # Importing the unittest module
 from user_data import User# Importing the contact class
+from credentials_data import Credential
 
 class TestUser(unittest.TestCase):
 
